@@ -5,10 +5,131 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background:url(img/登录页面3.jpg)no-repeat;
+      
+            background-size: 100%;
+        }
+        *{
+            padding:0;
+            margin: 0;
+        }
+        .div{
+            margin: 200px auto;
+            width:1400px;
+            height:500px;
+        }
+        ul{
+           list-style: none;
+        }
+        .div ul li{
+           position: relative;
+           overflow: hidden;
+           float: left;
+           width: 200px;
+           height: 500px;
+           background-color: coral;
+           transition: all 0.9s;
+           border-radius:2px;
+        }
+        img{
+            height: 500px;
+        }
+        p{
+            position:absolute;
+            top: 0;
+            left: 0;
+            display:inline;
+            color:white;
+            font-size:30px;
+            width:200px;
+            height: 100%;
+            background-color: rgba(0,0,0,0.2);
+            font-weight: 200;
+        }
+        span{
+            display: block;
+            margin:80px;
+            margin-top:60px;
+        }
+        .span1{
+            margin-left:0px;
+            font-size: 20px;
+        }
+        .d1{
+            margin: 0 auto;
+            width: 340px;
+        }
+        .d1>ul>li{
+            float:left;
+            margin-left:30px;
+            width:170px;
+            height:120px;
+            line-height:30px;
+            text-align: center;
+        }
+        button{
+            width:40px;
+            margin-left: 20px;
+            line-height:40px;
+            border-radius: 70px;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <h1>赖汁是赖子</h1>
+    <div class="div">
+        <ul>
+            <li>
+                <img src="img/登录页面.jpg" alt="">
+                <p><span>春<br/><br><span class="span1">春江水暖鸭先知</span></span></p>
+            </li>
+            <li>
+                <img src="img/登录背景5.jpg" alt="">
+                <p><span>夏<br/><br><span class="span1">竹杖芒鞋轻胜马</span></span></p>
+            </li>
+            <li>
+                <img src="img/登录背景4.jpg" alt="">
+                <p><span>秋<br/><br><span class="span1">霜叶红于二月花</span></span></p>
+            </li>
+            <li>
+                <img src="img/登录背景2.jpg" alt="">
+                <p><span>冬<br/><br><span class="span1">伍康</span></span></p>
+            </li>
+        </ul>
     </div>
+    <div class="d1">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+    </div>
+    <script>
+        let div = document.querySelector('div');
+        let li =div.querySelectorAll('li');
+        for(let i = 0;i<li.length;i++)
+        {
+            li[i].addEventListener('mousemove',function(){
+                for(let i = 0;i<li.length;i++)
+                {
+                    li[i].style.width=200+'px';
+                }
+                this.style.width=800+'px';
+            })
+        }
+        let body=document.querySelector('body');
+        var L = document.getElementsByTagName('button');
+		for(var i = 0;i<L.length;i++){
+			L[i].onclick =function(){
+				for(var i= 0;i<L.length;i++)
+					{
+						L[i].style.backgroundColor = '';
+					}
+				this.style.backgroundColor = 'green';
+			}
+		}
+    </script>
 </body>
 </html>
